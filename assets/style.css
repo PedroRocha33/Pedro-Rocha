@@ -9,7 +9,7 @@ body {
 
 /* Estilizando a navegação */
 nav {
-    width: 110%;
+    width: 100%;
     max-width: 1300px; /* Define uma largura máxima */
     background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
     display: flex;
