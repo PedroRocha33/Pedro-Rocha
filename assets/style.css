@@ -485,7 +485,7 @@ button.glow-on-hover:hover {
     nav ul li {
         margin: 0.5rem 1rem; /* Margem vertical entre itens */
         width: 70%; /* Itens ocupam largura total */
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-right: -8rem;
     }
 
