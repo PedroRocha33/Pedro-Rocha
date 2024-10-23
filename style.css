@@ -1,0 +1,552 @@
+/* Definindo uma fonte padrão para todo o body */
+body {
+    font-family: 'Arial', sans-serif; /* Substitua por outra fonte se preferir */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fundo suave para toda a página */
+    scroll-behavior: smooth; /* Adiciona a rolagem suave */
+}
+
+/* Estilizando a navegação */
+nav {
+    width: 110%;
+    max-width: 1300px; /* Define uma largura máxima */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+    display: flex;
+    justify-content: space-between; /* Espaço entre logo e itens do menu */
+    align-items: center; /* Alinha verticalmente os itens */
+    padding: 1rem 2rem; /* Espaçamento interno */
+    margin: 0 auto; /* Centraliza a navbar na tela */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra na navbar */
+}
+
+.nav-div img{
+    width: 200px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    color: rgb(44, 47, 218);
+    font-size: 1.3rem;
+    align-items: center;
+    padding: 0; /* Remove a margem */
+    margin: 0; /* Remove a margem */
+}
+
+nav li {
+    margin-right: 20px; /* Reduzido para um espaçamento mais sutil */
+}
+
+nav li:last-child {
+    margin-right: 0; /* Remove margem do último item */
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(44, 47, 218);
+    transition: color 0.3s; /* Transição suave para a cor */
+    padding: 0rem 0; /* Espaçamento vertical para itens do menu */
+}
+
+nav a:hover {
+    color: #ff7300; /* Cor de destaque ao passar o mouse */
+}
+/* Estilizando a seção principal */
+main {
+    margin-top: 0;
+    background-color: rgb(70, 69, 69); /* Fundo com leve transparência */
+    display: flex; /* Para que left-main e right-main fiquem lado a lado */
+    padding: 2rem; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    margin: 1rem 2rem; /* Margem ao redor da seção principal */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+}
+
+.left-main {
+    width: 50%;
+    padding: 2rem; /* Espaçamento interno */
+}
+
+.left-main h2 {
+    font-family: "Esteban", sans-serif;
+    font-size: 2.7rem;
+    background: linear-gradient(270deg, #e4e4e6, #cecece, #f7f7f7, #e7e7e7); /* Gradiente de cores */
+    -webkit-background-clip: text; /* Para WebKit */
+    -webkit-text-fill-color: transparent; /* Para WebKit */
+    background-clip: text; /* Para outros navegadores */
+    animation: rainbow 5s ease infinite; /* Animação */
+    margin-bottom: 1.5rem; /* Espaçamento abaixo do título */
+}
+
+/* Definindo a animação */
+@keyframes rainbow {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+.left-main .glow-on-hover {
+    margin-left: 10rem; /* Mantido como está */
+}
+
+/* Estilizando a seção direita */
+.right-main {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-main img {
+    width: 80%; /* Aumentando a largura da imagem */
+    height: auto; /* Mantendo a proporção da imagem */
+    border-radius: 15px; /* Bordas arredondadas na imagem */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra mais sutil na imagem */
+}
+
+/* Botão com efeito de glow */
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(44, 47, 218); /* Cor de fundo do botão */
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    transition: transform 0.3s; /* Efeito de transformação suave */
+}
+
+.glow-on-hover:hover {
+    transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #b700ff, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(44, 47, 218); /* Cor de fundo do botão */
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Estilização para a seção de Projetos */
+#projetos {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo claro com leve transparência */
+    padding: 2rem;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    margin: 2rem 0; /* Margem superior e inferior */
+}
+
+#projetos h2 {
+    font-family: "Esteban", sans-serif;
+    font-size: 2.5rem;
+    color: rgb(44, 47, 218); /* Cor do título */
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 1.5rem; /* Espaçamento abaixo do título */
+}
+
+.projetos-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os projetos se ajustem em várias linhas */
+    justify-content: center; /* Centraliza os projetos */
+}
+
+.projeto {
+    background-color: rgba(240, 240, 240, 0.9); /* Fundo dos projetos */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 1.5rem;
+    margin: 1rem; /* Margem entre os projetos */
+    width: 300px; /* Largura fixa dos projetos */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para os projetos */
+    transition: transform 0.3s; /* Efeito de transformação suave ao passar o mouse */
+}
+
+.projeto:hover {
+    transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+}
+
+.projeto h3 {
+    font-family: "Esteban", sans-serif;
+    font-size: 1.8rem; /* Tamanho da fonte do título do projeto */
+    color: rgb(44, 47, 218); /* Cor do título do projeto */
+    margin-bottom: 0.5rem; /* Espaçamento abaixo do título */
+}
+
+.tablet{
+    margin-left: -3.6rem;
+    width: 140%;
+}
+
+.projeto p {
+    font-size: 1rem; /* Tamanho da fonte da descrição */
+    color: #333; /* Cor do texto da descrição */
+}
+
+/* Estilização para a seção de Contato */
+#contato {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo claro com leve transparência */
+    padding: 2rem;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    margin: 2rem 0; /* Margem superior e inferior */
+}
+
+#contato h2 {
+    font-family: "Esteban", sans-serif;
+    font-size: 2.5rem;
+    color: rgb(44, 47, 218); /* Cor do título */
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 1.5rem; /* Espaçamento abaixo do título */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Alinha os campos do formulário em coluna */
+    width: 100%;
+    max-width: 500px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário */
+}
+
+form div {
+    margin-bottom: 1rem; /* Espaçamento entre os campos */
+}
+
+form label {
+    font-size: 1rem; /* Tamanho da fonte do rótulo */
+    color: #333; /* Cor do texto do rótulo */
+}
+
+form input,
+form textarea {
+    width: 100%; /* Largura total dos campos */
+    padding: 0.5rem; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda clara */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 1rem; /* Tamanho da fonte */
+}
+
+form button {
+    background-color: rgb(44, 47, 218); /* Cor do botão */
+    color: white; /* Cor do texto do botão */
+    padding: 0.7rem;
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: background-color 0.3s; /* Efeito de transição suave */
+    font-size: 1rem; /* Tamanho da fonte do botão */
+}
+
+form button:hover {
+    background-color: rgb(30, 30, 200); /* Cor mais escura ao passar o mouse */
+}
+
+/* Estilizando a seção "Sobre" */
+#sobre {
+    background-color: #f5f5f5; /* Fundo suave para destacar a seção */
+    padding: 3rem;
+    margin: 2rem 0;
+    border-radius: 15px; /* Bordas arredondadas para um visual moderno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+    text-align: center; /* Centralizar o conteúdo */
+}
+
+#sobre h2 {
+    font-family: 'Esteban', serif; /* Usando a fonte "Esteban" para título */
+    font-size: 2.5rem;
+    color: #2f3c88; /* Cor azul para o título */
+    margin-bottom: 1rem;
+    text-transform: uppercase; /* Letras maiúsculas para o título */
+    letter-spacing: 1.5px; /* Espaçamento entre letras */
+}
+
+#sobre p {
+    font-family: 'Arial', sans-serif; /* Fonte mais simples para o texto */
+    font-size: 1.2rem;
+    line-height: 1.8; /* Melhorando a legibilidade */
+    color: #333; /* Cor suave para o texto */
+    max-width: 800px; /* Limitando a largura do parágrafo */
+    margin: 0 auto; /* Centralizando o parágrafo */
+}
+
+/* Efeito hover no parágrafo */
+#sobre p:hover {
+    color: #1f3a72; /* Cor muda ao passar o mouse */
+    transition: color 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Estilização dos ícones sociais */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    margin-top: 2rem;
+}
+
+.social-icon {
+    font-size: 3rem; /* Tamanho do ícone */
+    margin: 0 1.5rem; /* Espaçamento entre os ícones */
+    color: #333; /* Cor padrão dos ícones */
+    transition: transform 0.3s, color 0.3s; /* Transição suave para transformações e cor */
+    text-decoration: none; /* Remove a sublinha nos links */
+}
+
+/* Efeito hover no ícone */
+.social-icon:hover {
+    transform: scale(1.2); /* Aumenta o tamanho do ícone ao passar o mouse */
+}
+
+/* Cor personalizada para o WhatsApp */
+.whatsapp {
+    color: #25D366; /* Verde do WhatsApp */
+}
+
+.whatsapp:hover {
+    color: #128C7E; /* Cor mais escura ao passar o mouse */
+}
+
+/* Cor personalizada para o GitHub */
+.github {
+    color: #333; /* Preto do GitHub */
+}
+
+.github:hover {
+    color: #000; /* Cor mais escura ao passar o mouse */
+}
+
+/* Seção de Serviços */
+.servicos {
+    background-color: #f7f7f7;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.servicos h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Esteban', serif;
+}
+
+.servico {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 80%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servico:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.servico h3 {
+    font-size: 1.8em;
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.servico p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.servico strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.servico p:last-child {
+    font-size: 1em;
+    color: #008000;
+}
+
+.servico:nth-child(even) {
+    background-color: #f0f8ff;
+}
+
+.servico:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Botão Glow Animado */
+button.glow-on-hover {
+    background-color: #0066cc;
+    border: none;
+    padding: 15px 25px;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button.glow-on-hover:hover {
+    background-color: #005bb5;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Ícones Sociais */
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icon {
+    font-size: 2.5em;
+    color: #333;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #0066cc;
+}
+
+.whatsapp:hover {
+    color: #25D366;
+}
+
+.github:hover {
+    color: #333;
+}
+
+/* Ajustes para Responsividade */
+@media (max-width: 768px) {
+    .servico {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .social-icon {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction:column; /* Coloca o nav em coluna */
+        align-items: flex-start; /* Alinha itens à esquerda */
+    }
+
+    nav ul {
+        
+        width: 100%; /* Largura total do nav */
+    }
+
+    nav ul li {
+        margin: 0.5rem 1rem; /* Margem vertical entre itens */
+        width: 70%; /* Itens ocupam largura total */
+        font-size: 1.2rem;
+        margin-right: -8rem;
+    }
+
+    .nav-div img{
+        margin-left: 7rem;
+    }
+
+    main {
+        margin-left: 0px;
+        width: 100%;
+        height: 100vh; /* Define a altura como 100% da janela de visualização */
+        flex-direction: column; /* Layout em coluna para o main */
+        padding: 0; /* Reduz o padding em telas menores */
+        padding-bottom: 0px; /* Adiciona espaço inferior */
+
+        background-image: url("/images/background3.png");
+        background-size: cover; /* Ou 'contain', conforme sua preferência */
+        background-repeat: no-repeat; /* Não repete a imagem */
+        background-position: center; /* Centraliza a imagem */
+    }
+    
+    .left-main, .right-main {
+        width: 100%; /* Largura total em telas menores */
+        margin-bottom: 0; /* Espaço entre as seções */
+    }
+
+    .right-main {
+        display: none; /* Oculta a imagem na seção direita */
+    }
+
+    .glow-on-hover {
+        display: inline-block; /* Permite que o botão use margin e padding */
+        width: 47%; /* Largura do botão */
+        margin: 9.5rem auto; /* Centraliza horizontalmente e adiciona margem superior/inferior */
+        padding: 15px; /* Adiciona espaçamento interno ao botão */
+        text-align: center; /* Centraliza o texto dentro do botão */
+        background-color: #007bff; /* Cor de fundo do botão */
+        color: white; /* Cor do texto */
+        
+        border: none; /* Remove bordas padrão */
+        border-radius: 5px; /* Bordas arredondadas */
+        font-size: 18px; /* Tamanho da fonte */
+        cursor: pointer; /* Muda o cursor ao passar o mouse */
+        transition: box-shadow 0.3s ease; /* Transição suave para o efeito de brilho */
+    }
+    
+    .glow-on-hover:hover {
+        box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc; /* Efeito de brilho ao passar o mouse */
+    }
+
+    .left-main h2{
+        opacity: 0;
+        font-size: 1.3rem;
+        margin-left: 0;
+    }
+}
+
+.h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3rem;
+}
+
