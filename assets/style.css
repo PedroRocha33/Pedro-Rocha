@@ -479,6 +479,12 @@ body {
 }
 
 @media (max-width: 768px) {
+
+body {
+    overflow-x: hidden; /* Impede que o conteúdo vaze horizontalmente */
+    margin: 0; /* Certifique-se de que não haja margens no body */
+    margin-right: 0;
+    
     nav {
         flex-direction:column; /* Coloca o nav em coluna */
         align-items: flex-start; /* Alinha itens à esquerda */
@@ -501,13 +507,13 @@ body {
     }
 
     main {
-        margin-left: 0px;
+        margin-left: 2rem;
         width: 100%;
         height: 100vh; /* Define a altura como 100% da janela de visualização */
         flex-direction: column; /* Layout em coluna para o main */
         padding: 0; /* Reduz o padding em telas menores */
         padding-bottom: 0px; /* Adiciona espaço inferior */
-
+        
         background-image: url("/images/background3.png");
         background-size: cover; /* Ou 'contain', conforme sua preferência */
         background-repeat: no-repeat; /* Não repete a imagem */
