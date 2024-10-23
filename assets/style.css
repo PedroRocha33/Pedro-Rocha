@@ -421,7 +421,7 @@ form button:hover {
 button.glow-on-hover {
     background-color: #0066cc;
     border: none;
-    padding: 15px 25px;
+    padding: 1px 1px;
     color: white;
     font-size: 1.2em;
     border-radius: 25px;
