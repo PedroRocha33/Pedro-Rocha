@@ -530,7 +530,7 @@ body {
         text-align: center; /* Centraliza o texto dentro do botão */
         background-color: #007bff; /* Cor de fundo do botão */
         color: white; /* Cor do texto */
-        
+        font-size: 0.7rem;
         border: none; /* Remove bordas padrão */
         border-radius: 5px; /* Bordas arredondadas */
         font-size: 18px; /* Tamanho da fonte */
