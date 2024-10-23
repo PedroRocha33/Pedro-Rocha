@@ -507,7 +507,7 @@ body {
     }
 
     main {
-        margin-left: 2rem;
+        margin-left: 0rem;
         width: 100%;
         height: 100vh; /* Define a altura como 100% da janela de visualização */
         flex-direction: column; /* Layout em coluna para o main */
